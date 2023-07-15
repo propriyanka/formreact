@@ -35,12 +35,11 @@ const Login = () => {
   };
 
   if (loggedIn) {
-   
     return <Redirect to="/profile" />;
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="h-screen flex flex-col items-center justify-center">
       <h2 className="text-2xl font-bold mb-4">Login</h2>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -62,12 +61,14 @@ const Login = () => {
             className="border border-gray-300 px-4 py-2 rounded-md"
           />
         </div>
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
-        >
-          Login
-        </button>
+        <div className="flex items-center justify-center">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );
